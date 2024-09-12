@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllCategories } from "../lib/category/read_server";
+import { getAllCategories } from "@/app/lib/category/read_server";
 
 export default async function Page() {
   const categories = await getAllCategories();

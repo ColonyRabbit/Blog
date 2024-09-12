@@ -44,7 +44,7 @@ export default function CategoryFormContextProvider({ children }) {
     setIsLoading(false);
   };
   const handleDelete = async (id) => {
-    router.push(`/admin/Categories`);
+    router.push(`/admin/categories`);
     setError(null);
     setIsLoading(true);
     setIsDone(false);
