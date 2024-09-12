@@ -1,5 +1,5 @@
 "use client";
-import { getAuthor } from "@/app/lib/Authors/read";
+import { getAuthor } from "../../../../lib/authors/read";
 import {
   createNewAuthor,
   updateAuthor,
