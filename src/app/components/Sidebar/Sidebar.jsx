@@ -15,7 +15,7 @@ const Sidebar = () => {
     },
     {
       name: "Categories",
-      link: "/admin/Categories",
+      link: "/admin/categories",
       icon: <Layers />,
     },
     {
