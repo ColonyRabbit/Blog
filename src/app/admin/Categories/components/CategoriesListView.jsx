@@ -41,7 +41,7 @@ const CategoriesListView = () => {
                   <td className="border px-4 py-2 bg-blue-100">{item?.name}</td>
                   <td className="border px-4 py-2 bg-blue-100">{item?.slug}</td>
                   <td className="border px-4 py-2 bg-blue-100">
-                    <Link href={`/admin/Categories/form?id=${item?.id}`}>
+                    <Link href={`/admin/categories/form?id=${item?.id}`}>
                       <button className="text-white w-full bg-blue-800 font-bold p-2 rounded-full">
                         Action
                       </button>

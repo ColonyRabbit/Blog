@@ -1,11 +1,14 @@
 import { db, storage } from "@/app/lib/firebase";
-import { setDoc, Timestamp, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import {
+  setDoc,
+  Timestamp,
+  doc,
+  updateDoc,
+  deleteDoc,
+} from "firebase/firestore";
 import { getDownloadURL, uploadBytes, ref } from "firebase/storage";
 
-export const 
-
-
-createNewPost = async ({ data, image }) => {
+export const createNewPost = async ({ data, image }) => {
   if (!data?.title) {
     throw new Error("Title is not defined");
   }
@@ -21,6 +24,7 @@ createNewPost = async ({ data, image }) => {
   const imageURL = await getDownloadURL(imageRef);
 
   const firestoreRef = doc(db, `posts/${data?.slug}`);
+  console.log(data)
   await setDoc(firestoreRef, {
     ...data,
     id: data?.slug,
@@ -39,7 +43,7 @@ export const updatePost = async ({ data, image }) => {
   if (image) {
     const imageRef = ref(storage, `posts/${data?.slug}.png`);
     await uploadBytes(imageRef, image);
-     imageURL = await getDownloadURL(imageRef);
+    imageURL = await getDownloadURL(imageRef);
   }
 
   const firestoreRef = doc(db, `posts/${data?.id}`);
@@ -53,5 +57,5 @@ export const deletePost = async (id) => {
   if (!id) {
     throw new Error("Id is reqired");
   }
-  await deleteDoc(doc(db,`posts/${id}`))//ชื่อ collection ต้องตรงแปะๆตัวเล็ก_ใหญ๋
+  await deleteDoc(doc(db, `posts/${id}`)); //ชื่อ collection ต้องตรงแปะๆตัวเล็ก_ใหญ๋
 };

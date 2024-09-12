@@ -23,7 +23,6 @@ const Page = () => {
       fetchData(updateAuthorId);
     }
   }, [updateAuthorId]);
-
   return (
     <main className="w-full p-2">
       <div className="flex">
@@ -78,7 +77,11 @@ const Page = () => {
         </div>
         {data?.photoAuthorURL && (
           <div>
-            <img className="h-60" src={data?.photoAuthorURL} alt={data?.photoAuthorURL} />
+            <img
+              className="h-60"
+              src={data?.photoAuthorURL}
+              alt={data?.photoAuthorURL}
+            />
           </div>
         )}
         {image && (

@@ -188,7 +188,7 @@ function SelectAuthorField() {
         {authors &&
           authors?.map((item, index) => {
             return (
-              <option key={index} value={item.id}>
+              <option key={index} value={item?.id}>
                 {item?.name}
               </option>
             );

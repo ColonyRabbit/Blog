@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
 export default Layout;
 const InnerLayout = ({ children }) => {
   const { user, isLoading: authIsLoading } = useAuth(); // ข้อมูบ user login ใน firebase
+  //console.log(user)
   const { data, error, isLoading } = useAdmin({ uid: user?.uid }); //ส่งข้อมูลที่ query จาก admins มาเป็นใน data
   if (authIsLoading || isLoading) {
     return <h2>Loading...</h2>;
