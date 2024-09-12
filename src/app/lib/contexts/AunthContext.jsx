@@ -28,12 +28,14 @@ export default function AuthContextProvider({ children }) {
   const handleSignInWithGoolgle = async () => {
     setIsLoading(true);
     try {
-      await signInWithPopup(auth, new GoogleAuthProvider());
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
     } catch (error) {
       setError(error?.message);
     }
     setIsLoading(false);
   };
+  
   //logout
   const handleLogout = async () => {
     setIsLoading(true);
